@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "bugs": "https://github.com/AncientSouls/AncientSouls.github.io/issues",
+  "repository": "AncientSouls/AncientSouls.github.io",
+  "license": "MIT",
+  "scripts": {
+    "dev-init": "git submodule init && git submodule update && (for p in ./packages/*; do (cd \"$p\" && git checkout $B && git pull); done) && (cd doc && git checkout master -f && git pull) && npm run dev-install && npm run dev-check",
+    "dev-check": "npm run dev-tslint && npm run dev-tsc && npm run dev-test",
+    "dev-build": "npm run dev-normalize && npm run dev-check && npm run dev-doc",
+    "dev-install": "npm install && npm run dev-install-packages && npm run dev-set-links && npm run dev-use-links",
+    "dev-install-packages": "for p in ./packages/*; do (cd $p && npm i); done",
+    "dev-set-links": "for p in ./packages/*; do npm link $p; done",
+    "dev-use-links": "for p in ./packages/*; do (cd \"$p\" && npm run dev-link); done",
+    "dev-normalize": "for p in ./packages/*; do cp -a ./normalize/. $p/; done",
+    "dev-tsc": "(cd ./packages/ancient-mixins; npm run tsc) && (cd ./packages/ancient-cursor; npm run tsc) && (cd ./packages/ancient-channels; npm run tsc) && (cd ./packages/ancient-peer; npm run tsc) && (cd ./packages/ancient-funicular; npm run tsc) && (cd ./packages/ancient-asket; npm run tsc) && (cd ./packages/ancient-babilon; npm run tsc) && (cd ./packages/ancient-tracker; npm run tsc)",
+    "dev-tslint": "for p in ./packages/*; do (cd \"$p\" && npm run tslint); done",
+    "dev-doc": "find ./doc/ ! -name '.git' ! -name 'doc' -exec rm -rf {} + && touch ./doc/.nojekyll && typedoc --readme ./README.md --name \"AncientSouls Documentation\" --module commonjs --out ./doc/ --excludeExternals --exclude \"**/+(node_modules|tests)/**\" --disableOutputCheck --ignoreCompilerErrors --includes includes ./packages",
+    "dev-acp-packages": "for p in ./packages/* ; do (cd $p && echo \"$p\" && git add . -A && git commit --quiet -m \"$M\" && git push --quiet --all origin); done",
+    "dev-acp-dev": "git add . -A && echo \"./\" && git commit --quiet -m \"$M\" && git push --quiet --all origin",
+    "dev-acp-doc": "(cd doc && echo \"doc\" && git add . -A && git commit --quiet -m \"$M\" && git push --quiet --all origin)",
+    "dev-acp": "npm run dev-acp-dev && npm run dev-acp-doc && npm run dev-acp-packages",
+    "dev-test": "for p in ./packages/* ; do (cd \"$p\" && echo \"$p\" && npm run test); done",
+    "dev-np": "for p in ./packages/* ; do (cd $p && npm run np); done"
+  },
+  "devDependencies": {
+    "typedoc": "^0.10.0",
+    "typedoc-plugin-markdown": "^1.0.14",
+    "typescript": "^2.7.2"
+  }
+}

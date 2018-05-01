@@ -1,0 +1,34 @@
+{
+  "name": "ancient-mixins",
+  "version": "0.0.13",
+  "description": "Core functions, classes, types and interfaces.",
+  "bugs": "https://github.com/AncientSouls/Mixins/issues",
+  "repository": "AncientSouls/Mixins",
+  "license": "MIT",
+  "scripts": {
+    "tsc": "rm -rf ./lib ./tests && ./node_modules/typescript/bin/tsc",
+    "test": "./node_modules/mocha/bin/mocha ./tests/index.js --require source-map-support/register",
+    "tslint": "./node_modules/tslint/bin/tslint -c tslint.json './src/**/*.ts'",
+    "dev-link": "true",
+    "dev-test": "(rm -rf .dev && git clone -b dev https://github.com/AncientSouls/AncientSouls.github.io.git .dev && cd .dev && git submodule init && git submodule update && npm run dev-install) && npm link ./ && (cd .dev && npm run dev-use-links && npm run dev-check)",
+    "np": "./node_modules/np/cli.js --no-publish --no-yarn --yolo  --any-branch"
+  },
+  "dependencies": {
+    "events": "^2.0.0",
+    "lodash": "^4.17.10",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^9.6.8",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "np": "^2.20.1",
+    "source-map-support": "^0.5.5",
+    "ts-node": "^6.0.2",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.8.0",
+    "tslint-eslint-rules": "^5.1.0",
+    "typescript": "^2.8.3"
+  }
+}

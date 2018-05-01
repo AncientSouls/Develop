@@ -1,0 +1,40 @@
+[submodule "packages/ancient-mixins"]
+	path = packages/ancient-mixins
+	url = https://github.com/AncientSouls/Mixins.git
+	branch = develop
+[submodule "packages/ancient-cursor"]
+	path = packages/ancient-cursor
+	url = https://github.com/AncientSouls/Cursor.git
+	branch = develop
+[submodule "packages/ancient-channels"]
+	path = packages/ancient-channels
+	url = https://github.com/AncientSouls/Channels.git
+	branch = develop
+[submodule "packages/ancient-peer"]
+	path = packages/ancient-peer
+	url = https://github.com/AncientSouls/Peer.git
+	branch = develop
+[submodule "packages/ancient-funicular"]
+	path = packages/ancient-funicular
+	url = https://github.com/AncientSouls/Funicular.git
+	branch = develop
+[submodule "packages/ancient-asket"]
+	path = packages/ancient-asket
+	url = https://github.com/AncientSouls/Asket.git
+	branch = develop
+[submodule "packages/ancient-tracker"]
+	path = packages/ancient-tracker
+	url = https://github.com/AncientSouls/Tracker.git
+	branch = develop
+[submodule "packages/ancient-babilon"]
+	path = packages/ancient-babilon
+	url = https://github.com/AncientSouls/Babilon.git
+	branch = develop
+[submodule "packages/ancient-postgresql"]
+	path = packages/ancient-postgresql
+	url = https://github.com/AncientSouls/PostgreSQL.git
+	branch = develop
+[submodule "doc"]
+	path = doc
+	url = https://github.com/AncientSouls/AncientSouls.github.io.git
+	branch = master
