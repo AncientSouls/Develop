@@ -26,5 +26,6 @@
     "typedoc": "^0.10.0",
     "typedoc-plugin-markdown": "^1.0.14",
     "typescript": "^2.7.2"
-  }
+  },
+  "dependencies": {}
 }
